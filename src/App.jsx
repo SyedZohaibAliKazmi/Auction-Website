@@ -1,19 +1,21 @@
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
 
-  const handleClick =()=>{
-    window.open('https://github.com/SyedZohaibAliKazmi', '_blank');
-  }
 
-  return (
-    <>
-    <h1>Auction Website </h1>
-    <p>Craete a Auction Website for new Versio.</p>
-    <button onClick={handleClick}>Click</button>
-    </>
-  )
+ return(
+  <BrowserRouter>
+  <Navbar/>
+  <Routes>
+    
+  </Routes>
+  </BrowserRouter>
+ )
+
+
 }
 
 export default App
