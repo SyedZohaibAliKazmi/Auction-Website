@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #4B3D3D;
+    /* color:#F5F4DC ; */
+    font-family: "Lora", "Playfair Display", serif;
+  }
+  
+  .main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 60px;
+    background-color: #f5f4dc;
+    margin: 10px auto;
+    border-radius: 50px;
+    position: relative;
+  }
+  
+  .logo {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #4B3D3D;
+  }
+  
+  .pages-link {
+    display: flex;
+  }
+  
+  .pages-link ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .pages-link ul li {
+    padding: 6px;
+  }
+  
+  .pages-link a {
+    text-decoration: none;
+    color: #4B3D3D;
+    padding: 0 6px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: color 0.3s, background-color 0.3s, font-weight 0.3s, filter 0.3s;
+  }
+  
+  .pages-link a:hover,
+  .pages-link a:active {
+    background-color: #4B3D3D;
+    color: #F5F4DC;
+    border-radius: 50px;
+    padding: 2px 6px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  .pages-link:hover ul li a {
+    filter: blur(1.5px);
+  }
+  .pages-link ul li a:hover {
+    filter: none;
+  }
+  
+  .Navbar-Account {
+    display: flex;
+    margin: 0px 20px;
+    padding: 0px 20px;
+    gap: 10px;
+  }
+  
+
+  .account-button {
+    color: #4B3D3D;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border-radius: 10px;
+    font-size: 28px;
+    padding: 4px;
+    position: relative;
+  }
+  
+ 
+  .account-button:hover,
+  .account-button:active {
+    background-color: #4B3D3D;
+    color: #F5F4DC;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  /* Responsive Menu */
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    color: #4B3D3D;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    margin-right: 20px;
+  }
+  
+  /* Responsive Desig for Tablet  */
+  
+  @media screen and (max-width: 789px) {
+    .main-navbar {
+      justify-content: space-between;
+    }
+    .Navbar-Account {
+      display: flex;
+      margin: 0px 0px;
+      padding: 0px 20px;
+    }
+    .pages-link {
+      position: absolute;
+      top: 59px;
+      right: 0;
+      background-color: #F5F4DC;
+      flex-direction: column;
+      align-items: center;
+      width: 200px;
+      border-radius: 10px;
+      min-height: 250px;
+      overflow: hidden;
+      opacity: 0;
+      transition: height 0.3s ease, opacity 0.3s ease;
+    }
+  
+    /* Display menu when open */
+    .pages-link.open {
+      height: 200px;
+      opacity: 2;
+    }
+  
+    .pages-link ul {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .pages-link ul li {
+      padding: 10px 10px;
+    }
+  
+    .pages-link a {
+      font-size: 32px;
+    }
+  
+    .hamburger {
+      display: block;
+      font-size: 28px;
+      margin-right: 20px; /* Move hamburger to the left */
+    }
+  
+    .Navbar-Account {
+      margin-left: auto; /* Move cart/account icons to the right */
+      display: flex;
+      align-items: center;
+    }
+  
+
+    .account-button {
+      font-size: 24px;
+    }
+  }
+  
+   /* Responsive Design for Mobile  */
+  
+  @media screen and (max-width: 480px) {
+    .main-navbar {
+      height: 48px;
+    }
+    .logo {
+      margin-left: 16px;
+      font-size: 10px;
+    }
+   
+    .account-button {
+      font-size: 20px;
+    }
+  
+    .hamburger {
+      display: block;
+      font-size: 26px;
+      margin-right: 20px;
+    }
+    .pages-link {
+      top: 46px;
+      width: 160px;
+      min-height: auto;
+    }
+    .pages-link a {
+      font-size: 20px;
+    }
+  }
