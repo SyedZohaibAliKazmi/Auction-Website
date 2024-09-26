@@ -8,6 +8,7 @@
     color:#F5F4DC ;
     font-family: "Lora", "Playfair Display", serif;
   }
+/* ====================\ First Hero Section =============\================\============ */
 
   .hero-main{
     display: flex;
@@ -33,6 +34,7 @@
     font-size: 18px;
     font-weight: 800;
     background-color: #F5F4DC;
+    color: #4B3D3D;
     padding: 4px 8px;
     border-radius: 10px;
     border: none;
@@ -44,16 +46,152 @@
     scale: 1.1;
 }
 
-
-
   .hero-image img{
     height: 500px;
     filter: drop-shadow(0px 0px 15px rgba(245, 244, 220));
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   }
   
   .hero-image img:hover{
-   scale: 1.1;
+    transform: scale(1.05);
 
   }
+/* ====================\ Second Hero Section =============\================\============ */
+
+
+.heading-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+.heading-btn h1{
+  font-size: 32px;
+  font-weight: bold;
+  /* text-transform: upperca  se; */
+}
+.heading-btn button{
+  width: auto;
+  font-size: 18px;
+  font-weight: 800;
+  background-color: #F5F4DC;
+  color: #4B3D3D;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+.heading-btn button:hover,
+.heading-btn button:active{
+  box-shadow: 0px 0px 20px #F5F4DC;
+  scale: 1.1;
+}
+
+/* This is for after the screen size smaill all are wrap  */
+.three-prod-show{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  justify-content: space-evenly; 
+  padding: 10px 20px;
+}
+
+.product-show{
   
+    width: 350px;
+    min-height: 400px;
+    background-color: #F5F4DC;
+    color: #4B3D3D;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.product-show:hover{
+  box-shadow: 0px 0px 30px #F5F4DC;
+  transform: scale(1.05);
+
+
+}
+.product-show img{
+  height: 320px;
+ 
+}
+.image{
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.product-show h1{
+  font-size: 24px;
+  font-weight: 900;
+  margin: 6px 20px;
+}
+.product-show p{
+  font-size: 18px;
+  font-weight: 800;
+  margin: 6px 20px;
+
+}
+.product-show button{
+  width: auto;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4B3D3D;
+  color: #F5F4DC;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: none;
+  margin: 6px 20px;
+
+
+}
+
+/* =======================\=\== Our Communty /===================================== */
+
+.community {
+  background-color: #F5F4DC;
+  color: #4B3D3D;
+  width: auto;
+  height: 300px;
+  margin-top: 20px;
+
+}
+
+.community h1 span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  padding: 30px;
+  font-weight: bolder;
+  text-shadow: 0px 2px 4px #4B3D3D;
+  
+}
+.community-counter{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 20px;  
+}
+.member h1{
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+.countries h1{
+  display: flex;
+  justify-content: center;
+  padding: 8px ;
+}
+.award h1{
+  display: flex;
+  justify-content: center;
+  padding: 8px ;
+}
