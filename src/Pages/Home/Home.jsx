@@ -3,6 +3,7 @@ import HeroImg from "../Images/11.png";
 import { Link } from "react-router-dom";
 import divImg from "../Images/3.jpg";
 import { useState,useEffect } from "react";
+import Footer from "../../Components/Footer/Footer";
 
 function Home() {
 
@@ -38,12 +39,6 @@ function Home() {
       clearInterval(awardsInterval);
     };
   }, [activeMembers, countries, awards]);
-
-
-
-
-
-
 
 
 
@@ -136,7 +131,7 @@ function Home() {
   </div>
 
 
-
+  <Footer/>
 
 
 
