@@ -7,6 +7,7 @@ import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import SignIn from './Pages/Auth/SignIn'
+import AddProduct from './Pages/AddProduct/AddProduct'
 function App() {
 
 
@@ -21,6 +22,7 @@ function App() {
     <Route path='About' element={<About/>}/>
     <Route path='Contact' element={<Contact/>}/>
     <Route path='SignIn' element={<SignIn/>}/>
+    <Route path='AddProduct' element={<AddProduct/>}/>
     
   </Routes>
   </BrowserRouter>

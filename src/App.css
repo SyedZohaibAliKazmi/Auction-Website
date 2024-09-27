@@ -1,1 +1,13 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Lora", "Playfair Display", serif;
+  }
+  
+  body{
+    background-color: #4B3D3D;
+    color:#F5F4DC ;
+    font-family: "Lora", "Playfair Display", serif;
+  }
