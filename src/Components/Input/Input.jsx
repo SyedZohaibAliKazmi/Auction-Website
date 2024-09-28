@@ -4,14 +4,16 @@ import './Input.css'
 function Input({ formKey, obj, placeholder, errors, errorMsg, type }) {
 
 
-    
+  console.log("Errors: ", errors);
+  console.log("FormKey: ", formKey);
 
     return(
         <div >
          <div className="main-inp">
-          {errors [formKey] && (<span>**{errorMsg}**</span>)}
+          {/* {"errors" [''] && (<span>**{errorMsg}**</span>)} */}
+          {errors && errors[formKey] && (<span>**{errorMsg ? errorMsg : "Its Error"}**</span>)}
           <input placeholder={placeholder} type={type ? type:"text" } {...obj} />
-          {/* {errors [formKey] && ( <span>{errorMsg ? errorMsg:"Its Error"}</span> )} */}
+          
          </div>
       </div>
 

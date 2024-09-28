@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Lora", "Playfair Display", serif;
+  }
+  
+  body{
+
+    
+    background-color: #4B3D3D;
+    color:#F5F4DC ;
+    font-family: "Lora", "Playfair Display", serif;
+  }
+.main-signin{
+    /* width: auto; */
+    height: 300px;  
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.main-signin button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color: #F5F4DC;
+    color: #4B3D3D;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 50% 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.main-signin button:hover,
+.main-signin button:active{
+    box-shadow: 0px 0px 30px #F5F4DC;
+    transform: scale(1.05);
+    cursor: pointer;
+}

@@ -1,16 +1,25 @@
 import './Products.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 
 function Products() {
+const navigate = useNavigate()
+const handleAddProduct =()=>{
+    if(user.isLogin){
+        navigate("/addproduct")
+    } else {
+        navigate("/signin")
+    }
+}
+
     return(
         <>
         <div className="product-main">
             <div className="add-option">
                 <h1>Products</h1>
-                <Link to='/addproduct'>
-                <button>Add Products</button>
-                </Link>
+                
+                <button onClick={handleAddProduct}>Add Products</button>
+                
             </div>
 
             <div className="all-product">

@@ -1,6 +1,7 @@
 
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Input from "../../Components/Input/Input";
 
 function AddProduct() {
   const navigate = useNavigate()
@@ -14,11 +15,29 @@ function AddProduct() {
 
     return(
         <>
-        <h1>helllo</h1>
+        {/* <h1>helllo</h1> */}
         <form onSubmit={handleSubmit(onSubmit)}>
+
+          <Input 
+          placeholder={"Product title"}
+          obj={{...register("title", {required:true,maxLength:30})}}
+          errorMsg={"Text Length should be 30"}
+          formKey={"title"}
+          errors={errors}
+
+
+          />
             
         </form>
      
+        
+        {/* <CustomInput
+        placeholder={"Product Title"}
+        obj={{ ...register("title", { required: true, maxLength: 30 }) }}
+        errorMsg={"Text Length should be between 1 to 30"}
+        formKey={"title"}
+        errors={errors}
+        /> */}
         
         </>
         
@@ -28,20 +47,3 @@ function AddProduct() {
 }
 
 export default AddProduct
-
-
-const CustomInput = ({ formKey, obj, placeholder, errors, errorMsg, type }) => {
-    return (
-      <div className="flex flex-col mx-4">
-        <input
-          className="border mt-2 w-full  h-10 border-purple-600 lg:w-2/3 mx-auto p-4 rounded-md"
-          placeholder={placeholder}
-          type={type ? type : "text"}
-          {...obj}
-        />
-        {errors[formKey] && (
-          <span className="text-sm mb-1 text-red-500">{errorMsg}</span>
-        )}
-      </div>
-    );
-  }
