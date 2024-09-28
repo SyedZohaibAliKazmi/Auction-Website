@@ -33,6 +33,7 @@ setLoading(true);
     
     message.success("Successfully Login")
     setLoading(false)
+    navigate("/products")
 
     
    })
