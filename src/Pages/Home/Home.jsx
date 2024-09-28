@@ -45,6 +45,7 @@ function Home() {
   return (
     // "Bid Now, Win Big: Unlock Exclusive Deals at Our Auction Hub!" "AuctionAura" name  "BidNest"
     <div>
+      
         {/* hero section 1 */}
       <div className="hero-main">
         <div className="hero-text">
@@ -52,7 +53,7 @@ function Home() {
           <h2>
             Unlock Exclusive Deals at Our <br /> Auction Hub!
           </h2>
-          <Link to='./products'>
+          <Link to='/products'>
           <button>Bid Now</button>
           </Link>
         </div>
@@ -66,13 +67,13 @@ function Home() {
       <div className="sec-hero">
         <div className="heading-btn">
             <h1>Latest</h1>
-            <Link to='./products'>
+            <Link to='/products'>
             <button>See All</button></Link>
         </div>
 
 
         <div className="three-prod-show">
-         <Link to='./products'>
+         <Link to='/products'>
           <div className="product-show">
             <img src={divImg} alt="" className="image" />
             <h1>Product Name</h1>
@@ -81,7 +82,7 @@ function Home() {
         </div>
         </Link>
 
-        <Link to='./products'>
+        <Link to='/products'>
           <div className="product-show">
             <img src={divImg} alt="" className="image" />
             <h1>Product Name</h1>
@@ -91,7 +92,7 @@ function Home() {
         </div>
         </Link>
        
-        <Link to='./products'>
+        <Link to='/products'>
           <div className="product-show">
             <img src={divImg} alt="" className="image" />
             <h1>Product Name</h1>

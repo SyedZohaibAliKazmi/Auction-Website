@@ -31,7 +31,7 @@ function Navbar() {
       }
     }, [isOpen]);
   return (
-    <div>
+    <div >
       <div className="main-navbar">
         <div className="logo">
           <h1>Logo</h1>

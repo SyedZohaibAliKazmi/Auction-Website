@@ -8,6 +8,7 @@
     /* color:#F5F4DC ; */
     font-family: "Lora", "Playfair Display", serif;
   }
+ 
   
   .main-navbar {
     display: flex;
@@ -19,6 +20,7 @@
     margin: 10px auto;
     border-radius: 50px;
     position: relative;
+    /* z-index: 9999; */
   }
   
   .logo {

@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Use npm and insatll use in react js
+
+# 1- Font Awesome
+# 2- firebase
+# 3- gsap
+# 4- React hook form 

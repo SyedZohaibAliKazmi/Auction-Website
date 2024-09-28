@@ -8,6 +8,7 @@ import About from './Pages/About/About'
 import Contact from './Pages/Contact/Contact'
 import SignIn from './Pages/Auth/SignIn'
 import AddProduct from './Pages/AddProduct/AddProduct'
+import Input from './Components/Input/Input'
 function App() {
 
 
@@ -23,6 +24,7 @@ function App() {
     <Route path='Contact' element={<Contact/>}/>
     <Route path='SignIn' element={<SignIn/>}/>
     <Route path='AddProduct' element={<AddProduct/>}/>
+    <Route path='Input' element={<Input/>}/>
     
   </Routes>
   </BrowserRouter>
