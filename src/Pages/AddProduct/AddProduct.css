@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Lora", "Playfair Display", serif;
+  }
+  
+  body{
+    background-color: #4B3D3D;
+    color:#F5F4DC ;
+    font-family: "Lora", "Playfair Display", serif;
+  }
+  .btn-container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  /* .btn-container{
+    background-color: #F5F4DC;
+    color: #4B3D3D;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    font-weight:600;
+  } */
+ .btn-container button{
+    background-color: #F5F4DC;
+    color: #4B3D3D;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight:800;
+    transition: transform 0.3 ease-in-out, box-shadow 0.3s ease;
+ }
+
+  .btn-container button:hover,
+  .btn-container button:active{
+    box-shadow: 0px 0px 10px #F5F4DC;
+    transform: scale(1.05);
+  }

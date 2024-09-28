@@ -2,14 +2,18 @@ import './Products.css'
 import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 
+
+
 function Products() {
+
 const navigate = useNavigate()
 const handleAddProduct =()=>{
-    if(user.isLogin){
+    
+    
         navigate("/addproduct")
-    } else {
-        navigate("/signin")
-    }
+
+    
+    
 }
 
     return(
@@ -23,6 +27,7 @@ const handleAddProduct =()=>{
             </div>
 
             <div className="all-product">
+          
                 <div className="product">
                     <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1vdG9yYmlrZXxlbnwwfHwwfHx8MA%3D%3D"  alt="product" className='image'/>
                     <h1>Product Name</h1>

@@ -4,8 +4,8 @@ import './Input.css'
 function Input({ formKey, obj, placeholder, errors, errorMsg, type }) {
 
 
-  console.log("Errors: ", errors);
-  console.log("FormKey: ", formKey);
+  // console.log("Errors: ", errors);
+  // console.log("FormKey: ", formKey);
 
     return(
         <div >

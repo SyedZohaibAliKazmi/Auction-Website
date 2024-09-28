@@ -5,18 +5,20 @@ import { auth,db  } from '../../utils/firebase'
 import { signInWithPopup } from 'firebase/auth'
 import {  doc, setDoc } from 'firebase/firestore'
 import { message } from 'antd'
+import Loading from '../../Components/Loading/Loading'
+import { useLoading } from '../../Context/Loading-Context/LoadingContext'; // Adjust path as needed
 
 function SignIn() {
-
+    const { loading, setLoading } = useLoading();
     const navigate = useNavigate()
 
-const handleSignIn = ()=>{
-
-  const provider = new  GoogleAuthProvider()
+const handleSignIn = async ()=>{
+setLoading(true);
+  const provider = await new  GoogleAuthProvider()
   provider.addScope("https://www.googleapis.com/auth/contacts.readonly")
   signInWithPopup(auth,provider)
   .then((result)=>{
-   const credential = GoogleAuthProvider.credentialFromResult(result)
+   const credential =  GoogleAuthProvider.credentialFromResult(result)
    const user = result.user
    console.log("result",result);
    // Reference from Firebase DB my Project
@@ -30,29 +32,32 @@ const handleSignIn = ()=>{
     console.log("user",user);
     
     message.success("Successfully Login")
+    setLoading(false)
+
+    
    })
    
   })
-  .catch((error) => {
+  .catch (async(error)  =>  {
     // Handle Errors here.
     const errorCode = error.code;
-    const errorMessage = error.message;
+     const errorMessage =  error.message;
 
     console.log(errorMessage);
     
-    var err = message.error(errorMessage);
+    await message.error(errorMessage);
 
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
-    
+    setLoading(false)
   })
 }
 
     return(
         
             <div className="main-signin">
-                
+                  {loading && <Loading/>}
                 <button onClick={handleSignIn}>Login With Google</button>
             </div>
         
