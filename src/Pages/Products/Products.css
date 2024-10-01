@@ -49,6 +49,7 @@
   .all-product{
     display: flex;
     flex-wrap: wrap;
+    /* flex-direction: column; */
     gap: 2px;
     justify-content: space-evenly; 
     padding: 10px 20px;

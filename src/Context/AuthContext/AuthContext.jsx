@@ -15,7 +15,7 @@ function AuthContextProvider({ children }) {
       if (user) {
         const docRef = doc(db, "users", user.uid);
         const userInfo = (await getDoc(docRef)).data();
-        console.log("userInfo=>", userInfo);
+        // console.log("userInfo=>", userInfo);
         setUser({
           isLogin: true,
           ...userInfo,
