@@ -1,46 +1,38 @@
 import "./Home.css";
 import HeroImg from "../Images/11.png";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../../Components/Footer/Footer";
-import { collection,  getDocs, limit, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../../utils/firebase";
 
-
-
 function Home() {
-
   const [activeMembers, setActiveMembers] = useState(0);
   const [countries, setCountries] = useState(0);
   const [awards, setAwards] = useState(0);
-  const [products,setProducts] = useState([])
+  const [products, setProducts] = useState([]);
 
-useEffect(() => {
-  getProducts()
-},[])
+  useEffect(() => {
+    getProducts();
+  }, []);
 
-const getProducts = async ()=>{
-try {
-  
-  const productCollection = collection(db,"products")
-  const q = query(productCollection,orderBy("createdAt", "desc"), limit(3))
- const doc = await getDocs(q)
- const arr =[]
- doc.forEach((product) =>
-  arr.push({...product.data(), id: product.id})
-)
-setProducts([...arr])
-// console.log("arr=>", arr);
-
-
-} catch (error) {
-  console.log("error=>",error);
-  
-  
-}
-  
-  
-}
+  const getProducts = async () => {
+    try {
+      const productCollection = collection(db, "products");
+      const q = query(
+        productCollection,
+        orderBy("createdAt", "desc"),
+        limit(3)
+      );
+      const doc = await getDocs(q);
+      const arr = [];
+      doc.forEach((product) => arr.push({ ...product.data(), id: product.id }));
+      setProducts([...arr]);
+      // console.log("arr=>", arr);
+    } catch (error) {
+      console.log("error=>", error);
+    }
+  };
 
   useEffect(() => {
     // Animate active members
@@ -71,22 +63,19 @@ setProducts([...arr])
     };
   }, [activeMembers, countries, awards]);
 
-
-
   return (
     // "Bid Now, Win Big: Unlock Exclusive Deals at Our Auction Hub!" "AuctionAura" name  "BidNest"
     <div>
-      
-        {/* hero section 1 */}
-        
+      {/* hero section 1 */}
+
       <div className="hero-main">
         <div className="hero-text">
           <h1>Bid Now, Win Big</h1>
           <h2>
             Unlock Exclusive Deals at Our <br /> Auction Hub!
           </h2>
-          <Link to='/products'>
-          <button>Bid Now</button>
+          <Link to="/products">
+            <button>Bid Now</button>
           </Link>
         </div>
         <div className="hero-image">
@@ -98,57 +87,51 @@ setProducts([...arr])
 
       <div className="sec-hero">
         <div className="heading-btn">
-            <h1>Latest</h1>
-            <Link to='/products'>
-            <button>See All</button></Link>
+          <h1>Latest</h1>
+          <Link to="/products">
+            <button>See All</button>
+          </Link>
         </div>
 
-
         <div className="three-prod-show">
-        {products.map((data)=>(
-           <Link to='/products'  key={data.id}>
-           <div className="product-show">
-             <img src={data.img} alt="" className="image" />
-             <h2>{data.title}</h2>
-             <button>Bid Now</button>
-         </div>
-         </Link>
-        ))}
-  
-      </div>
-    
-
-    </div> 
-
-    {/* Our Community  */}
-
-  <div className="community">
-    <h1><span>Our Community</span></h1>
-
-    <div className="community-counter">
-      <div className="member">
-        <h1>{activeMembers}</h1>
-        <h1>Active Memeber</h1>
+          {products.map((data) => (
+            <Link to="/products" key={data.id}>
+              <div className="product-show">
+                <img src={data.img} alt="" className="image" />
+                <h2>{data.title}</h2>
+                <button>Bid Now</button>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
 
-      <div className="countries">
-        <h1>{countries}</h1>
-        <h1>Countries</h1>
+      {/* Our Community  */}
+
+      <div className="community">
+        <h1>
+          <span>Our Community</span>
+        </h1>
+
+        <div className="community-counter">
+          <div className="member">
+            <h1>{activeMembers}</h1>
+            <h1>Active Memeber</h1>
+          </div>
+
+          <div className="countries">
+            <h1>{countries}</h1>
+            <h1>Countries</h1>
+          </div>
+
+          <div className="award">
+            <h1>{awards}</h1>
+            <h1>Award</h1>
+          </div>
+        </div>
       </div>
 
-      <div className="award">
-        <h1>{awards}</h1>
-        <h1>Award</h1>
-      </div>
-
-    </div>
-  </div>
-
-
-  <Footer/>
-
-
-
+      <Footer />
     </div> //main
   );
 }

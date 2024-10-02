@@ -53,13 +53,13 @@ body {
   align-items: center;
   padding: 10px 50px;
 }
-.product{
+.product {
   width: 350px;
   min-height: 360px;
   background-color: #f5f4dc;
   color: #4b3d3d;
   border-radius: 10px;
-  margin-top: 20px ;
+  margin-top: 20px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* align-items: center; */
@@ -69,31 +69,23 @@ body {
   transform: scale(1.05);
 }
 
-.product img{
+.product img {
   width: 90%;
   height: 260px;
   object-fit: cover;
 }
 
-/* .image{
-    margin-top: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-  } */
-
-.product h2{
+.product h2 {
   font-size: 22px;
   font-weight: 900;
   margin: 6px 20px;
 }
-.product h3{
+.product h3 {
   font-size: 20px;
   font-weight: 800;
   margin: 6px 20px;
 }
-.product h4{
+.product h4 {
   font-size: 14px;
   font-weight: 900;
   margin: 6px 20px;
