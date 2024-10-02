@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom"
 
 
       const {user}= useContext(AuthContext)
-      console.log("user",user)
+    //   console.log("user",user)
    
 
 const navigate = useNavigate()

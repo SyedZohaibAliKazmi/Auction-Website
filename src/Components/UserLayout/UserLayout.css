@@ -8,19 +8,22 @@
     /* color:#F5F4DC ; */
     font-family: "Lora", "Playfair Display", serif;
   }
+
+
  .layout-pages{
-    background-color: aquamarine;
+
     display: flex;
+    gap: 10%; 
+
+   
  }
  .user-page{
     background-color: #F5F4DC;
     height: 100vh;
     padding: 10px 20px;
-    /* display: flex; */
     justify-content: space-around;
     width: 1/4;
-    /* flex-direction: column; */
-    border: 4px solid white;
+    border-radius: 8px;
  }
  .user-page h1{
     color: #4B3D3D;
@@ -31,4 +34,16 @@
  .user-page h2{
     color: #4B3D3D;
     padding-bottom: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .user-page h2:hover,
+ .user-page h2:active{
+    cursor: pointer;
+    color: #F5F4DC;
+    background-color: #4B3D3D;
+    border-radius: 6px;
+    padding: 2px 4px;
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
  }

@@ -6,21 +6,21 @@ function UserLayout() {
   return (
     <div className="main-user-Layout">
       <div className="layout-pages">
-        {/* <h2>User Info</h2> */}
+        
         <div className="user-page">
             <h1>Account Deatils</h1>
           <Link to={"/user/Profile"}>
-            <h2 className="cursor-pointer p-2 w-full h-9 hover:bg-fuchsia-200">
+            <h2 >
              * Profile
             </h2>
           </Link>
           <Link to={"/user/UserProduct"}>
-            <h2 className="cursor-pointer p-2 w-full h-9 hover:bg-fuchsia-200">
+            <h2 >
               * Products
             </h2>
           </Link>
           <Link to={"/user/Bid"}>
-            <h2 className="cursor-pointer p-2 w-full h-9 hover:bg-fuchsia-200">
+            <h2 >
               * Bids
             </h2>
           </Link>
