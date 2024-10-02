@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #4B3D3D;
+    /* color:#F5F4DC ; */
+    font-family: "Lora", "Playfair Display", serif;
+  }
+ .layout-pages{
+    background-color: aquamarine;
+    display: flex;
+ }
+ .user-page{
+    background-color: #F5F4DC;
+    height: 100vh;
+    padding: 10px 20px;
+    /* display: flex; */
+    justify-content: space-around;
+    width: 1/4;
+    /* flex-direction: column; */
+    border: 4px solid white;
+ }
+ .user-page h1{
+    color: #4B3D3D;
+    padding-bottom: 20px;
+    text-decoration: underline ;
+ }
+
+ .user-page h2{
+    color: #4B3D3D;
+    padding-bottom: 8px;
+ }

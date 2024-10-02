@@ -54,7 +54,7 @@ function Navbar() {
         {auth.currentUser ? (
           <div className="Navbar-Account">
           <div className="account-button">
-            <Link to={"/profile"}>
+            <Link to={"/user"}>
               <Avatar src={user?.photoUrl} />
             </Link>
           </div>
