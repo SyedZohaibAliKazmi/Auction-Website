@@ -1,15 +1,46 @@
 import "./Home.css";
 import HeroImg from "../Images/11.png";
 import { Link } from "react-router-dom";
-import divImg from "../Images/3.jpg";
 import { useState,useEffect } from "react";
 import Footer from "../../Components/Footer/Footer";
+import { collection,  getDocs, limit, orderBy, query } from "firebase/firestore";
+import { db } from "../../utils/firebase";
+
+
 
 function Home() {
 
   const [activeMembers, setActiveMembers] = useState(0);
   const [countries, setCountries] = useState(0);
   const [awards, setAwards] = useState(0);
+  const [products,setProducts] = useState([])
+
+useEffect(() => {
+  getProducts()
+},[])
+
+const getProducts = async ()=>{
+try {
+  
+  const productCollection = collection(db,"products")
+  const q = query(productCollection,orderBy("createdAt", "desc"), limit(3))
+ const doc = await getDocs(q)
+ const arr =[]
+ doc.forEach((product) =>
+  arr.push({...product.data(), id: product.id})
+)
+setProducts([...arr])
+// console.log("arr=>", arr);
+
+
+} catch (error) {
+  console.log("error=>",error);
+  
+  
+}
+  
+  
+}
 
   useEffect(() => {
     // Animate active members
@@ -47,6 +78,7 @@ function Home() {
     <div>
       
         {/* hero section 1 */}
+        
       <div className="hero-main">
         <div className="hero-text">
           <h1>Bid Now, Win Big</h1>
@@ -73,34 +105,15 @@ function Home() {
 
 
         <div className="three-prod-show">
-         <Link to='/products'>
-          <div className="product-show">
-            <img src={divImg} alt="" className="image" />
-            <h1>Product Name</h1>
-            <p>Price: $100</p>
-            <button>Bid Now</button>
-        </div>
-        </Link>
-
-        <Link to='/products'>
-          <div className="product-show">
-            <img src={divImg} alt="" className="image" />
-            <h1>Product Name</h1>
-            <p>Price: $100</p>
-            <button>Bid Now</button>
-
-        </div>
-        </Link>
-       
-        <Link to='/products'>
-          <div className="product-show">
-            <img src={divImg} alt="" className="image" />
-            <h1>Product Name</h1>
-            <p>Price: $100</p>
-            <button>Bid Now</button>
-  
-        </div>
-        </Link>
+        {products.map((data)=>(
+           <Link to='/products'  key={data.id}>
+           <div className="product-show">
+             <img src={data.img} alt="" className="image" />
+             <h2>{data.title}</h2>
+             <button>Bid Now</button>
+         </div>
+         </Link>
+        ))}
   
       </div>
     

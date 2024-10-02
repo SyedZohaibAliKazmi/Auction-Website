@@ -12,6 +12,7 @@ import Profile from "./Pages/User/profile/Profile";
 import UserLayout from "./Components/UserLayout/UserLayout";
 import UserProduct from "./Pages/User/UserProduct/UserProduct";
 import Bid from "./Pages/User/Bid/Bid";
+import ProductDetail from "./Pages/Products/ProductDetail";
 function App() {
   return (
     <BrowserRouter>
@@ -21,11 +22,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Products" element={<Products />} />
-        <Route path="About" element={<About />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="SignIn" element={<SignIn />} />
-        <Route path="AddProduct" element={<AddProduct />} />
-        <Route path="Loading" element={<Loading />} />
+        <Route path="/productdetail" element={<ProductDetail/>}/>
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/AddProduct" element={<AddProduct />} />
+        <Route path="/Loading" element={<Loading />} />
 
         <Route path="/user" element={<UserLayout/>}>
           <Route path="profile" element={<Profile />} />

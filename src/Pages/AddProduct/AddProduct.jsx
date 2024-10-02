@@ -45,7 +45,7 @@ try {
      await addDoc(productCollectionRef,obj)
         reset()
         message.success("Product added successfully!")
-  
+  navigate("/products")
   
 } catch (error) {
   console.log("error=>",error);

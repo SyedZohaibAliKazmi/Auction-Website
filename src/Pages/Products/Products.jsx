@@ -1,58 +1,89 @@
-import './Products.css'
-import { Link, useNavigate } from 'react-router-dom'
-import Footer from '../../Components/Footer/Footer'
+import "./Products.css";
+import {  useNavigate } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
+
+import { Link } from "react-router-dom";
+import { useState,useEffect } from "react";
+
+import { collection,  getDocs, limit, orderBy, query } from "firebase/firestore";
+import { db } from "../../utils/firebase";
+import dayjs from "dayjs";
+// var relativeTime = require("dayjs/plugin/relativeTime");
+import relativeTime from 'dayjs/plugin/relativeTime' // ES 2015
+dayjs.extend(relativeTime)
 
 
 function Products() {
 
-const navigate = useNavigate()
-const handleAddProduct =()=>{
-    
-    
-        navigate("/addproduct")
 
-    
-    
-}
+    const [products,setProducts] = useState([])
 
-    return(
-        <>
-        <div className="product-main">
-            <div className="add-option">
-                <h1>Products</h1>
-                
-                <button onClick={handleAddProduct}>Add Products</button>
-                
-            </div>
-
-            <div className="all-product">
-          
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1vdG9yYmlrZXxlbnwwfHwwfHx8MA%3D%3D"  alt="product" className='image'/>
-                    <h1>Product Name</h1>
-                    <p>Product Price: $100</p>
-                    <button>Bid Now</button>
-                    </div>
-                    
-                <div className="product">
-                    <img src="https://plus.unsplash.com/premium_photo-1664303727151-4c345687204a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW90b3JiaWtlfGVufDB8fDB8fHww"  alt="product" className='image'/>
-                    <h1>Product Name</h1>
-                    <p>Product Price: $100</p>
-                    <button>Bid Now</button>
-                    </div>
-                <div className="product">
-                    <img src="https://images.unsplash.com/photo-1519245659620-e859806a8d3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFtYm9yZ2hpbml8ZW58MHx8MHx8fDA%3D"  alt="product" className='image'/>
-                    <h1>Product Name</h1>
-                    <p>Product Price: $100</p>
-                    <button>Bid Now</button>
-                    </div>
+    useEffect(() => {
+      getProducts()
+    },[])
     
-            </div>
-        </div>
-
-        <Footer/>
-        </>
+    const getProducts = async ()=>{
+    try {
+      
+      const productCollection = collection(db,"products")
+      const q = query(productCollection,orderBy("createdAt", "desc"))
+     const doc = await getDocs(q)
+     const arr =[]
+     doc.forEach((product) =>
+      arr.push({...product.data(), id: product.id})
     )
+    setProducts([...arr])
+    // console.log("arr=>", arr);
+    
+    
+    } catch (error) {
+      console.log("error=>",error);
+      
+      
+    }
+      
+      
+    }
+
+
+
+
+  const navigate = useNavigate();
+  const handleAddProduct = () => {
+    navigate("/addproduct");
+  };
+
+
+
+  return (
+    <>
+      <div className="product-main">
+        <div className="add-option">
+          <h1>Products</h1>
+
+          <button onClick={handleAddProduct}>Add Products</button>
+        </div>
+        {/* product */}
+        <div className="all-product">
+
+        {products.map((data)=>(
+           <Link to='/productdetail'  key={data.id}>
+           <div className="product">
+             <img src={data.img} alt="" className="image" />
+             <h2>{data.title}</h2>
+             <h3>{data.price}</h3>
+             <h4>{ dayjs().to(data.createdAt.toDate()) }</h4>
+             <button>Bid Now</button>
+         </div>
+         </Link>
+        ))}
+         
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
 }
-export default Products
+export default Products;

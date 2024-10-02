@@ -1,84 +1,78 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    font-family: "Lora", "Playfair Display", serif;
-  }
-  
-  body{
-    background-color: #4B3D3D;
-    color:#F5F4DC ;
-    font-family: "Lora", "Playfair Display", serif;
-  }
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Lora", "Playfair Display", serif;
+}
 
-  .add-option{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    height: 50px;
-    background-color: #f5f4dc;
-    margin: 10px auto;
-    border-radius: 10px;
-    position: relative;
-    padding: 0 10px;
+body {
+  background-color: #4b3d3d;
+  color: #f5f4dc;
+  font-family: "Lora", "Playfair Display", serif;
+}
 
-  }
-  .add-option h1{
-    color: #4B3D3D;
-  }
-  .add-option button{
-    width: auto;
-    font-size: 16px;
-    font-weight: 800;
-    background-color: #4B3D3D;
-    color: #F5F4DC;
-    padding: 4px 8px;
-    border-radius: 10px;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* margin-top: 10px; */
-  }
-  .add-option button:hover,
-  .add-option button:active{
-    box-shadow: 0px 0px 10px #4B3D3D;
-   transform:  scale( 1.1);
-  }
+.add-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 50px;
+  background-color: #f5f4dc;
+  margin: 10px auto;
+  border-radius: 10px;
+  position: relative;
+  padding: 0 10px;
+}
+.add-option h1 {
+  color: #4b3d3d;
+}
+.add-option button {
+  width: auto;
+  font-size: 16px;
+  font-weight: 800;
+  background-color: #4b3d3d;
+  color: #f5f4dc;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* margin-top: 10px; */
+}
+.add-option button:hover,
+.add-option button:active {
+  box-shadow: 0px 0px 10px #4b3d3d;
+  transform: scale(1.1);
+}
 
-  /* ========================\ Product display ======================\ */
-  .all-product{
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    gap: 2px;
-    justify-content: space-evenly; 
-    padding: 10px 20px;
-    
-  }
-  .product{
-   
-        width: 350px;
-        min-height: 360px;
-        background-color: #F5F4DC;
-        color: #4B3D3D;
-        border-radius: 10px;
-        margin-top: 20px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    
-    }
-   .product:hover{
-      box-shadow: 0px 0px 30px #F5F4DC;
-      transform: scale(1.05);
-    
-    
-    }
-  
+/* ========================\ Product display ======================\ */
+.all-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 50px;
+}
+.product{
+  width: 350px;
+  min-height: 360px;
+  background-color: #f5f4dc;
+  color: #4b3d3d;
+  border-radius: 10px;
+  margin-top: 20px ;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* align-items: center; */
+}
+.product:hover {
+  box-shadow: 0px 0px 30px #f5f4dc;
+  transform: scale(1.05);
+}
+
 .product img{
-    width: 90%;
-    height: 260px;
-    object-fit: cover;
+  width: 90%;
+  height: 260px;
+  object-fit: cover;
 }
 
 /* .image{
@@ -89,29 +83,34 @@
     border-radius: 20px;
   } */
 
-  .product h1{
-    font-size: 24px;
-    font-weight: 900;
-    margin: 6px 20px;
-  
-  
-  }
-  .product p{
-    font-size: 18px;
-    font-weight: 800;
-    margin: 6px 20px;
-  
-  
-  }
-  .product button{
-    width: auto;
-    font-size: 16px;
-    font-weight: 600;
-    background-color: #4B3D3D;
-    color: #F5F4DC;
-    padding: 4px 6px;
-    border-radius: 8px;
-    border: none;
-    margin: 6px 20px;
-  }
-  
+.product h2{
+  font-size: 22px;
+  font-weight: 900;
+  margin: 6px 20px;
+}
+.product h3{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 6px 20px;
+}
+.product h4{
+  font-size: 14px;
+  font-weight: 900;
+  margin: 6px 20px;
+}
+.product p {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 6px 20px;
+}
+.product button {
+  width: auto;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4b3d3d;
+  color: #f5f4dc;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: none;
+  margin: 6px 20px;
+}
