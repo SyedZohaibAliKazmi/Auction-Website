@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import './Input.css'
 
-function Input({ formKey, obj, placeholder, errors, errorMsg, type }) {
+function Input({ formKey, obj, placeholder, errors, errorMsg, type,value, onChange }) {
 
 
   // console.log("Errors: ", errors);
@@ -12,7 +12,7 @@ function Input({ formKey, obj, placeholder, errors, errorMsg, type }) {
          <div className="main-inp">
           {/* {"errors" [''] && (<span>**{errorMsg}**</span>)} */}
           {errors && errors[formKey] && (<span>**{errorMsg ? errorMsg : "Its Error"}**</span>)}
-          <input placeholder={placeholder} type={type ? type:"text" } {...obj} />
+          <input placeholder={placeholder} value={value} type={type ? type:"text" } {...obj} onChange={onChange} />
           
          </div>
       </div>
